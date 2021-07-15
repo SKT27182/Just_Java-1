@@ -17,15 +17,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    int quantity=0;
+
     /**
      * This method is called when the order button is clicked.
      */
 
     public void submitOrder(View view) {
-        int number_Of_Coffee=5;
-        display(number_Of_Coffee);
-        displayPrice(number_Of_Coffee * 5);
-
+        display(quantity);
+        displayPrice(quantity * 5);
     }
 
     /**
@@ -34,14 +34,47 @@ public class MainActivity extends AppCompatActivity {
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quant);
         quantityTextView.setText("" + number);
-
     }
+
+    /**
+     * This method displays the given price value on the screen.
+     */
 
     private void displayPrice(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.price);
         quantityTextView.setText("$" + number);
-
     }
 
 
+    /* This method is called when the increment button is clicked*/
+
+    public void increment(View view) {
+        quantity++;
+        displayIn(quantity);
+    }
+
+    /**
+     * This method displays the incremented quantity value on the screen.
+     */
+
+    private void displayIn(int number) {
+        TextView quantityTextView = (TextView) findViewById(R.id.quant);
+        quantityTextView.setText("" + number);
+    }
+
+    /* This method is called when the decrement button is clicked*/
+
+    public void decrement(View view) {
+        quantity--;
+        displayDcr(quantity);
+    }
+
+    /**
+     * This method displays the incremented quantity value on the screen.
+     */
+
+    private void displayDcr(int number) {
+        TextView quantityTextView = (TextView) findViewById(R.id.quant);
+        quantityTextView.setText("" + number);
+    }
 }

@@ -12,18 +12,43 @@
         android:layout_height="wrap_content"
         android:text="Quantity"
         android:paddingLeft="15dp"
+        android:layout_marginBottom="16dp"
          />
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:paddingLeft="15dp"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
-        android:id="@+id/quant"
+        android:orientation="horizontal">
 
-        />
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="+"
+            android:textColor="@color/white"
+            android:onClick="increment"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textSize="16sp"
+            android:id="@+id/quant"
+            />
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="-"
+            android:textColor="@color/white"
+            android:onClick="decrement"
+            />
+    </LinearLayout>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +64,6 @@
         android:id="@+id/rate"
         android:textSize="16sp"
         android:layout_marginTop="16dp"
-
         />
 
     <TextView
@@ -57,7 +81,6 @@
         android:id="@+id/price"
         android:textSize="16sp"
         android:layout_marginTop="16dp"
-
         />
 
     <Button
@@ -70,6 +93,4 @@
         android:background="@color/cardview_light_background"
         android:onClick="submitOrder"
         android:text="Order" />
-
-
 </LinearLayout>
