@@ -1,8 +1,13 @@
 package com.example.android.justjava;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.TextView;
 
-import android.os.Bundle;
+        import androidx.appcompat.app.AppCompatActivity;
+/**
+ * This app displays an order form to order coffee.
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,4 +16,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    /**
+     * This method is called when the order button is clicked.
+     */
+
+    public void submitOrder(View view) {
+        display(2);
+        displayPrice(2 * 5);
+
+    }
+
+    /**
+     * This method displays the given quantity value on the screen.
+     */
+    private void display(int number) {
+        TextView quantityTextView = (TextView) findViewById(R.id.quant);
+        quantityTextView.setText("" + number);
+
+    }
+
+    private void displayPrice(int number) {
+        TextView quantityTextView = (TextView) findViewById(R.id.price);
+        quantityTextView.setText("$" + number);
+
+    }
+
+
 }
