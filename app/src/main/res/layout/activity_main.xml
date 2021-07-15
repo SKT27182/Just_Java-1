@@ -66,7 +66,8 @@
         android:layout_below="@id/price"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:background="#FF5722"
+        android:textColor="@color/white"
+        android:background="@color/cardview_light_background"
         android:onClick="submitOrder"
         android:text="Order" />
 
