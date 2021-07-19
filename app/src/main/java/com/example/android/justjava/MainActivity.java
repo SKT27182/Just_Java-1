@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayPrice(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.price);
-        quantityTextView.setText("$" + number);
+        quantityTextView.setText("$" + number +"\n\nThank You!");
     }
 
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the incremented quantity value on the screen.
+     * This method displays the decremented quantity value on the screen.
      */
 
     private void displayDcr(int number) {
