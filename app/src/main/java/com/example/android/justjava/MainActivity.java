@@ -2,6 +2,7 @@ package com.example.android.justjava;
 
         import android.os.Bundle;
         import android.view.View;
+        import android.widget.CheckBox;
         import android.widget.TextView;
 
         import androidx.appcompat.app.AppCompatActivity;
@@ -24,8 +25,32 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void submitOrder(View view) {
+        CheckBox CreamCheckBox =(CheckBox) findViewById(R.id.isChecked);
+        boolean HasCream = CreamCheckBox.isChecked();
+
+        int Price = CalculatePrice(quantity);
+        String Summary = OrderSummary(Price,HasCream);
         display(quantity);
-        displayPrice(quantity * 5);
+        displayPrice( Summary);
+    }
+
+
+    /**
+     * Method for calculating Price
+     */
+
+    private int CalculatePrice(int number){
+        return number*5;
+    }
+
+
+    /**
+     * MEthod for Order Summary
+     */
+
+    private String OrderSummary(int price, boolean HasCream){
+        return "NAME: Shailja Kant Tiwari" + "\nAdd Whipped Cream?"+ HasCream +"\nQuantity: "+ quantity + "\nTotal: $"+ price +"\nThank You!";
+
     }
 
     /**
@@ -40,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given price value on the screen.
      */
 
-    private void displayPrice(int number) {
+    private void displayPrice(String Summary) {
         TextView quantityTextView = (TextView) findViewById(R.id.price);
-        quantityTextView.setText("$" + number +"\n\nThank You!");
+        quantityTextView.setText(Summary);
     }
 
 
