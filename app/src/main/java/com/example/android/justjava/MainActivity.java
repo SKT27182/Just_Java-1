@@ -50,30 +50,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void increment(View view) {
         quantity++;
-        displayIn(quantity);
+        displayIncDcr(quantity);
     }
 
-    /**
-     * This method displays the incremented quantity value on the screen.
-     */
 
-    private void displayIn(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quant);
-        quantityTextView.setText("" + number);
-    }
 
     /* This method is called when the decrement button is clicked*/
 
     public void decrement(View view) {
         quantity--;
-        displayDcr(quantity);
+        displayIncDcr(quantity);
     }
 
     /**
-     * This method displays the decremented quantity value on the screen.
+     * This method displays the Increment and decremented quantity value on the screen.
      */
 
-    private void displayDcr(int number) {
+    private void displayIncDcr(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quant);
         quantityTextView.setText("" + number);
     }
