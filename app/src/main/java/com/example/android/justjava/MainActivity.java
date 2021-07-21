@@ -1,11 +1,14 @@
 package com.example.android.justjava;
 
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.CheckBox;
-        import android.widget.TextView;
+import android.os.Bundle;
+import android.text.Editable;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
 
-        import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * This app displays an order form to order coffee.
  */
@@ -18,20 +21,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    int quantity=0;
+    int quantity = 0;
 
     /**
      * This method is called when the order button is clicked.
      */
 
     public void submitOrder(View view) {
-        CheckBox CreamCheckBox =(CheckBox) findViewById(R.id.isChecked);
+        CheckBox CreamCheckBox = (CheckBox) findViewById(R.id.isChecked);
         boolean HasCream = CreamCheckBox.isChecked();
 
+        CheckBox CheckChocolate = (CheckBox) findViewById(R.id.isCheckedChoco);
+        boolean HasChoco = CheckChocolate.isChecked();
+
         int Price = CalculatePrice(quantity);
-        String Summary = OrderSummary(Price,HasCream);
+        String Summary = OrderSummary(Price, HasCream, HasChoco);
         display(quantity);
-        displayPrice( Summary);
+        displayPrice(Summary);
     }
 
 
@@ -39,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
      * Method for calculating Price
      */
 
-    private int CalculatePrice(int number){
-        return number*5;
+    private int CalculatePrice(int number) {
+        return number * 5;
     }
 
 
@@ -48,9 +54,14 @@ public class MainActivity extends AppCompatActivity {
      * MEthod for Order Summary
      */
 
-    private String OrderSummary(int price, boolean HasCream){
-        return "NAME: Shailja Kant Tiwari" + "\nAdd Whipped Cream?"+ HasCream +"\nQuantity: "+ quantity + "\nTotal: $"+ price +"\nThank You!";
-
+    private String OrderSummary(int price, boolean HasCream, boolean HasChoco) {
+        EditText Txt =  findViewById(R.id.plain_text_input);
+        String Temp=Txt. getText(). toString();
+        if (!HasChoco & !HasCream) {
+            return "$" + price;
+        } else {
+            return "NAME: "+ Temp + "\nAdd Whipped Cream?" + HasCream + "\nAdd Chocolate?" + HasChoco + "\nQuantity: " + quantity + "\nTotal: $" + price + "\nThank You!";
+        }
     }
 
     /**
