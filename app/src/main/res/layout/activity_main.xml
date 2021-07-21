@@ -10,6 +10,25 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="TOPPINGS"
+        android:paddingLeft="15dp"
+        android:layout_marginBottom="16dp"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Whipped Cream"
+        android:layout_marginBottom="16dp"
+        android:paddingLeft="24dp"
+        android:textSize="16sp"
+        android:layout_marginLeft="15dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Quantity"
         android:paddingLeft="15dp"
         android:layout_marginBottom="16dp"
