@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         EditText Txt = findViewById(R.id.plain_text_input);
         name = Txt.getText().toString();
 
-        return "NAME: " + name + "\nAdd Whipped Cream?" + HasCream + "\nAdd Chocolate?" + HasChoco + "\nQuantity: " + quantity + "\nTotal: $" + price + "\nThank You!";
+        return "NAME: " + name + "\nAdd Whipped Cream?" + HasCream + "\nAdd Chocolate?" + HasChoco + "\nQuantity: " + quantity + "\nTotal: $" + price + "\n" + getString(R.string.thank);
 
     }
 
