@@ -3,22 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#35C7EC">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical"
+        android:textColor="@color/black"
         tools:context=".MainActivity">
 
         <EditText
             android:id="@+id/plain_text_input"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:paddingLeft="15dp"
+            android:hint="NAME"
             android:inputType="text"
-            android:hint="NAME"/>
+            android:paddingLeft="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,7 +69,8 @@
                 android:layout_height="48dp"
                 android:onClick="increment"
                 android:text="+"
-                android:textColor="@color/white" />
+
+                app:backgroundTint="#73F4D6" />
 
 
             <TextView
@@ -75,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:text="0"
+                android:text="1"
                 android:textSize="16sp" />
 
             <Button
@@ -83,7 +87,8 @@
                 android:layout_height="48dp"
                 android:onClick="decrement"
                 android:text="-"
-                android:textColor="@color/white" />
+
+                app:backgroundTint="#73F4D6" />
         </LinearLayout>
 
 
@@ -103,32 +108,41 @@
             android:text="$5"
             android:textSize="16sp" />
 
-        <TextView
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:paddingLeft="15dp"
-            android:text="Order Summary"
-            android:textAllCaps="true" />
+            >
 
-        <TextView
-            android:id="@+id/price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:paddingLeft="15dp"
-            android:text=""
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:onClick="submitOrder"
+                android:text="Order"
+                app:backgroundTint="#73F4D6" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/price"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/cardview_light_background"
-            android:onClick="submitOrder"
-            android:text="Order"
-            android:textColor="@color/white" />
+            <Button
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/submit"
+                android:onClick="Call"
+                android:text="Call"
+                app:backgroundTint="#73F4D6" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/call"
+                android:onClick="Map"
+                android:text="FIND"
+                app:backgroundTint="#73F4D6" />
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>
