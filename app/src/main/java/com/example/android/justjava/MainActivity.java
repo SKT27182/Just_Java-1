@@ -72,12 +72,6 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void Map(View view){
-//        Intent intent = new Intent(Intent.ACTION_VIEW);
-//        intent.setData(Uri("geo:47.6,-122.3"));
-//        if (intent.resolveActivity(getPackageManager()) != null) {
-//            startActivity(intent);
-//        }
-
         Uri gmmIntentUri = Uri.parse("geo:26.2207102,81.2281093");
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
@@ -144,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void increment(View view) {
         if(quantity==10) {
-            Toast.makeText(this, "You cannot have more than 100 coffees", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "You cannot have more than 10 coffees", Toast.LENGTH_LONG).show();
             return;
         }
         quantity++;
